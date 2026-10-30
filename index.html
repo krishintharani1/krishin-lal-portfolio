@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Krishin Lal · System Lab</title>
+  <meta name="description" content="An interactive 3D lab of production AI systems built by Krishin Lal: retrieval, document AI, matching, and geospatial systems at United Bank Limited." />
+  <meta name="theme-color" content="#05070d" />
+  <meta property="og:title" content="Krishin Lal · System Lab" />
+  <meta property="og:description" content="A lab full of working ideas. Spin the room, open a machine, see the system behind it." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%2305070d'/%3E%3Cpath d='M8 23V9h3.4v5.6L17 9h4.4l-6.2 6.3 6.4 7.7h-4.3l-4.5-5.6L11.4 19v4H8Z' fill='%230a84ff'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script>document.documentElement.classList.replace("no-js", "js");</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Krishin Lal",
+    "jobTitle": "AI Engineer & Data Scientist",
+    "worksFor": { "@type": "Organization", "name": "United Bank Limited" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Karachi", "addressCountry": "PK" },
+    "email": "mailto:krishinlal1@gmail.com",
+    "telephone": "+92-323-1305008",
+    "sameAs": ["https://linkedin.com/in/krishin-lal"],
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Iqra University, Karachi" },
+    "knowsAbout": ["Large Language Models", "Retrieval-Augmented Generation", "Document AI", "Computer Vision", "Geospatial Analytics", "MLOps"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <canvas id="world" class="world" aria-hidden="true"></canvas>
+
+  <header class="topbar" id="topbar">
+    <button class="brand" type="button" id="reset-view" aria-label="KL System Lab: reset the view">
+      <span class="brand__mark" aria-hidden="true">KL</span>
+      <span class="brand__word">SYSTEM<br />LAB</span>
+    </button>
+
+    <p class="topbar__status">
+      <span class="status-tag">LIVE</span>
+      <span id="status-text">CALIBRATING LAB</span>
+      <span class="topbar__sep" aria-hidden="true">/</span>
+      <span>KARACHI 24.86°N</span>
+    </p>
+
+    <div class="topbar__actions">
+      <button class="ghost-btn" type="button" id="index-toggle" aria-expanded="false" aria-controls="index-panel">Index</button>
+      <button class="ghost-btn ghost-btn--accent" type="button" id="contact-toggle">Say hi <span aria-hidden="true">↗</span></button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="intro" id="top" aria-labelledby="intro-title">
+      <p class="intro__eyebrow"><span class="intro__line" aria-hidden="true"></span> KRISHIN LAL / AI SYSTEMS ENGINEER</p>
+      <h1 class="intro__title" id="intro-title">A lab full of<br /><span class="intro__accent">working</span> ideas.</h1>
+      <p class="intro__lede">Production AI at United Bank Limited. Six working systems, three experiments. Spin the lab, then step inside a machine to see how it works.</p>
+      <div class="intro__actions">
+        <button class="btn btn--primary" type="button" id="enter-lab">Step inside <span aria-hidden="true">↗</span></button>
+        <button class="btn btn--text" type="button" id="intro-index">Browse the index</button>
+      </div>
+      <dl class="intro__stats">
+        <div><dt>Hours saved / yr</dt><dd>1,467</dd></div>
+        <div><dt>Systems live</dt><dd>06</dd></div>
+        <div><dt>Projects</dt><dd>03</dd></div>
+      </dl>
+    </section>
+
+    <section class="preview" id="preview" aria-labelledby="preview-title">
+      <div class="preview__top"><span id="preview-number">01 / RETRIEVAL</span><strong id="preview-metric">300+ GB</strong></div>
+      <h2 id="preview-title">Regulatory RAG Advisor</h2>
+      <p id="preview-lede"></p>
+      <button class="ghost-btn preview__enter" type="button" id="inspect-item">Explore this system <span aria-hidden="true">↗</span></button>
+    </section>
+
+    <p class="hint" id="hint" aria-hidden="true" hidden>
+      <span class="hint__key">↔</span> DRAG TO SPIN
+      <span class="hint__sep">/</span> CLICK A MACHINE
+      <span class="hint__sep">/</span> SCROLL TO ZOOM
+    </p>
+
+    <div class="labels" id="labels" aria-hidden="true"></div>
+
+    <section class="detail" id="detail" hidden aria-labelledby="detail-title">
+      <div class="detail__top">
+        <button class="ghost-btn detail__back" type="button" id="detail-close">← Back to the lab</button>
+        <p class="detail__eyebrow" id="detail-eyebrow"></p>
+      </div>
+      <div class="detail__body" id="detail-body" tabindex="-1">
+        <p class="detail__metric" id="detail-metric"></p>
+        <h2 class="detail__title" id="detail-title"></h2>
+        <p class="detail__lede" id="detail-lede"></p>
+        <div class="detail__content" id="detail-content"></div>
+        <div class="detail__footer" id="detail-footer"></div>
+      </div>
+      <p class="detail__scene-caption" aria-hidden="true">INSIDE THE MACHINE<br /><span>Drag to inspect · Scroll to zoom</span></p>
+    </section>
+
+    <dialog class="index-panel" id="index-panel" hidden aria-labelledby="index-title">
+      <div class="index-panel__top">
+        <p class="index-panel__eyebrow">THE WHOLE LAB / 2026</p>
+        <button class="icon-btn" type="button" id="index-close" aria-label="Close index">×</button>
+      </div>
+      <h2 class="index-panel__title" id="index-title">Everything,<br /><span>in one place.</span></h2>
+      <div class="index-panel__scroll">
+        <section class="index-group">
+          <h3>Systems <span>06</span></h3>
+          <ol class="index-list" id="index-systems"></ol>
+        </section>
+        <section class="index-group">
+          <h3>Projects <span>03</span></h3>
+          <ol class="index-list" id="index-projects"></ol>
+        </section>
+        <section class="index-group">
+          <h3>About</h3>
+          <div class="index-about" id="index-about"></div>
+        </section>
+        <section class="index-group">
+          <h3>Contact</h3>
+          <div id="index-contact"></div>
+        </section>
+      </div>
+    </dialog>
+
+    <div class="dock" id="dock">
+      <div class="dock__modes" role="group" aria-label="Choose what to explore">
+        <button class="mode-btn is-active" type="button" data-mode="systems" aria-pressed="true">Systems <span>06</span></button>
+        <button class="mode-btn" type="button" data-mode="projects" aria-pressed="false">Projects <span>03</span></button>
+      </div>
+      <div class="dock__active">
+        <button class="nav-btn" type="button" id="prev-item" aria-label="Previous item">←</button>
+        <div class="dock__meta">
+          <span class="dock__kicker" id="dock-kicker">SYSTEM 01</span>
+          <strong class="dock__name" id="dock-name">Regulatory RAG Advisor</strong>
+        </div>
+        <button class="nav-btn" type="button" id="next-item" aria-label="Next item">→</button>
+      </div>
+      <div class="dock__actions">
+        <button class="action-btn" type="button" id="ping-btn"><span class="ping-icon" aria-hidden="true"></span> Ping</button>
+        <button class="action-btn" type="button" id="zero-g" aria-pressed="true">Zero-G on</button>
+      </div>
+    </div>
+
+    <p class="keyboard-hint" id="keyboard-hint" aria-hidden="true">← → SPIN · 1–6 JUMP · ESC BACK</p>
+
+    <div class="fallback" id="fallback" hidden>
+      <p class="fallback__eyebrow">3D VIEW UNAVAILABLE</p>
+      <h2>Still everything, just flatter.</h2>
+      <p>The interactive lab needs WebGL. The complete index is open instead.</p>
+      <button class="btn btn--primary" type="button" id="fallback-index">Open the index</button>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <div class="noscript">
+      <h2>Krishin Lal · AI Systems Engineer</h2>
+      <p>This interactive lab needs JavaScript. You can still reach Krishin at <a href="mailto:krishinlal1@gmail.com">krishinlal1@gmail.com</a>, on <a href="https://linkedin.com/in/krishin-lal">LinkedIn</a>, or download the <a href="Krishin-Lal-Resume.pdf">résumé</a>.</p>
+    </div>
+  </noscript>
+
+  <script type="module" src="assets/main.js"></script>
+</body>
+</html>
