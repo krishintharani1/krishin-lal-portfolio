@@ -275,7 +275,7 @@ function renderDetail(kind, item) {
   detailEyebrow.textContent = eyebrow;
   detailTitle.textContent = kind === "contact" ? CONTACT.title : item.title || item.name;
   detailLede.textContent = kind === "contact" ? CONTACT.lede : item.lede;
-  $("#detail-metric").textContent = item.metric || "Open a conversation";
+  $("#detail-metric").textContent = item.metric || (kind === "about" ? "Karachi, Pakistan" : "Open a conversation");
   detailContent.innerHTML = detailMarkup(kind, item);
 
   const footerKey = kind;
@@ -425,7 +425,7 @@ function init() {
   if (hint) hint.hidden = true;
 
   enterLab?.addEventListener("click", () => {
-    openDetail(currentMode === "systems" ? "system" : "project", currentItem, enterLab);
+    openDetail("about", ABOUT, enterLab);
   });
   inspectButton.addEventListener("click", () => {
     openDetail(currentMode === "systems" ? "system" : "project", currentItem, inspectButton);

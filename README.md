@@ -15,7 +15,8 @@ Open http://localhost:8123/. An HTTP server is required for JavaScript modules; 
 ## Explore
 
 - Drag the lab to rotate the carousel. Hover or select a machine for spring feedback.
-- Use **Step inside** or click a machine to travel into its chamber and read the details.
+- Use **Explore this system/project** or click a machine to travel into its chamber and read the details.
+- The introduction contains a short bio and **More about me** opens the full background information.
 - Drag inside a chamber to inspect the model. Scroll or pinch to zoom.
 - Use **Back to the lab** or Escape to return. The overview and its selected item are preserved.
 - Arrow keys navigate; keys 1–6 select systems. P sends a pulse, G toggles floating, and R resets the lab.
